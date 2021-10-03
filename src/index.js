@@ -7,6 +7,7 @@ console.log("Something")
 const jokeButton = document.querySelector('#joke')
 jokeButton.addEventListener("click", () => getJokes())
 //Event Listener 2: Button for "Next Joke"
+//Add listener to button then fetch from API
 
 function getJokes(){
   console.log("Joke Button Clicked")
@@ -14,22 +15,27 @@ function getJokes(){
   return fetch('https://api.chucknorris.io/jokes/random')
   .then(resp => resp.json())
   .then(element => {
-    nameLater(element.value)
+    currentJoke(element.value)
     //Fetching from https://api.chucknorris.io/jokes/random
 
   })
 }
 
-function nameLater(jokeValue){
-  const joke = document.querySelector("#joke-box")
+function currentJoke(jokeValue){
+  const joke = document.querySelector("#temp")
   const h4 = document.createElement("h4")
+  document.querySelector("h4").remove()
   h4.innerHTML = jokeValue
   joke.append(h4)
+  document.querySelector("label").style.display = "block"
+  document.querySelector("#laughed").style.display = "block"
+  
+  //add a drop down list here to rate the joke
+  //1-Lame, 2-"Eh", 3-Chuckled, 4-Laughed, 5-I'm Crying
+  //add a check button next to, to submit
 }
-//Add listener to button then fetch from API
 
-//Get random Chuck Norris joke and rate it:
-//1-Lame, 2-"Eh", 3-Chuckled, 4-Laughed, 5-I'm Crying
+//Get random Chuck Norris joke and rate it
 
 //Event Listener 3: List?, select how funny it was
 
