@@ -16,7 +16,6 @@ nextButton.addEventListener('click', () => nextJoke())
 
 function getJokes(){
   console.log("Joke Button Clicked")
-  
   return fetch('https://api.chucknorris.io/jokes/random')
   .then(resp => resp.json())
   .then(element => {
@@ -32,11 +31,12 @@ function nextJoke(){
     const haha = document.querySelector("h4")
     console.log("Haha: ", haha)
     let h3 = document.createElement("h3")
-    console.log("h3: ", h3)
+    console.log("h3: ", h3.innerHTML)
     const funnyList = document.querySelector("#funny-list")
     console.log("funnyList: ",funnyList)
     funnyList.append(h3)
-    h3.innerHTML = haha
+    h3.innerHTML = haha.innerHTML
+    console.log("h3 again: ", h3)
     console.log("attempting to write innerHTML")
 
     //funnyList.innerHTML = "haha"

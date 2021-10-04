@@ -1,3 +1,18 @@
 body{
-  background-color: rgb(8, 152, 248)
+  background-image: linear-gradient(to right,  rgb(8, 152, 248), green);
+}
+
+select option {
+  background-color: rgb(168, 15, 15);
+  color: red
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+#joke {
+  align-self: center;
+  justify-content: center;
+  color:rgb(8, 152, 248)
 }
