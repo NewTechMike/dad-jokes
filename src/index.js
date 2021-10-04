@@ -1,4 +1,5 @@
 //Chuck Norris Jokes
+//Get random Chuck Norris joke and rate it
 
 document.addEventListener('DOMContentLoaded', () => { 
 //Event Listener 1: DOMContentLoaded
@@ -10,6 +11,7 @@ jokeButton.addEventListener("click", () => getJokes())
 //Add listener to button then fetch from API
 const nextButton = document.querySelector('#next-joke')
 nextButton.addEventListener('click', () => nextJoke())
+//Event Listener 3: List?, select how funny it was
 
 
 function getJokes(){
@@ -28,15 +30,17 @@ function nextJoke(){
   const reaction = document.querySelector("#laughed").value
   if(reaction === 'laughed' || reaction ===  "i'm-crying"){
     const haha = document.querySelector("h4")
+    console.log("Haha: ", haha)
     let h3 = document.createElement("h3")
-    console.log("Place where joke goes was found")
-    //h3.innerHTML = something
-    p.innerText = haha
-    console.log(h3)
-    console.log(haha)
-    console.log("attempting to write innerHTML")
+    console.log("h3: ", h3)
     const funnyList = document.querySelector("#funny-list")
+    console.log("funnyList: ",funnyList)
     funnyList.append(h3)
+    h3.innerHTML = haha
+    console.log("attempting to write innerHTML")
+
+    //funnyList.innerHTML = "haha"
+    //document.querySelector("h3").append(haha)
     getJokes()
   }else {
     getJokes()
@@ -47,6 +51,7 @@ function currentJoke(jokeValue){
   const joke = document.querySelector("#temp")
   const h4 = document.createElement("h4")
   document.querySelector("h4").remove()
+  //joke.removeChild(h4)
   h4.innerHTML = jokeValue
   joke.append(h4)
   document.querySelector("#laughed").style.display = "block"
@@ -54,12 +59,10 @@ function currentJoke(jokeValue){
   
   //add a drop down list here to rate the joke
   //1-Lame, 2-"Eh", 3-Chuckled, 4-Laughed, 5-I'm Crying
+
   //add a check button next to, to submit
 }
 
-//Get random Chuck Norris joke and rate it
-
-//Event Listener 3: List?, select how funny it was
 
 //On the HTML page, start with Button:
 //"Did you hear:"
