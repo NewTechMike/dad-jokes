@@ -8,6 +8,9 @@ const jokeButton = document.querySelector('#joke')
 jokeButton.addEventListener("click", () => getJokes())
 //Event Listener 2: Button for "Next Joke"
 //Add listener to button then fetch from API
+const nextButton = document.querySelector('#next-joke')
+nextButton.addEventListener('click', () => nextJoke())
+
 
 function getJokes(){
   console.log("Joke Button Clicked")
@@ -21,14 +24,33 @@ function getJokes(){
   })
 }
 
+function nextJoke(){
+  const reaction = document.querySelector("#laughed").value
+  if(reaction === 'laughed' || reaction ===  "i'm-crying"){
+    const haha = document.querySelector("h4")
+    let h3 = document.createElement("h3")
+    console.log("Place where joke goes was found")
+    //h3.innerHTML = something
+    p.innerText = haha
+    console.log(h3)
+    console.log(haha)
+    console.log("attempting to write innerHTML")
+    const funnyList = document.querySelector("#funny-list")
+    funnyList.append(h3)
+    getJokes()
+  }else {
+    getJokes()
+  }
+}
+
 function currentJoke(jokeValue){
   const joke = document.querySelector("#temp")
   const h4 = document.createElement("h4")
   document.querySelector("h4").remove()
   h4.innerHTML = jokeValue
   joke.append(h4)
-  document.querySelector("label").style.display = "block"
   document.querySelector("#laughed").style.display = "block"
+  document.querySelector("#next-joke").style.display = "block"
   
   //add a drop down list here to rate the joke
   //1-Lame, 2-"Eh", 3-Chuckled, 4-Laughed, 5-I'm Crying
