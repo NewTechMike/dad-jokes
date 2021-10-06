@@ -13,7 +13,6 @@ const nextButton = document.querySelector('#next-joke')
 nextButton.addEventListener('click', () => nextJoke())
 //Event Listener 3: List?, select how funny it was
 
-
 function getJokes(){
   console.log("Joke Button Clicked")
   return fetch('https://api.chucknorris.io/jokes/random')
@@ -21,7 +20,6 @@ function getJokes(){
   .then(element => {
     currentJoke(element.value)
     //Fetching from https://api.chucknorris.io/jokes/random
-
   })
 }
 
@@ -36,11 +34,6 @@ function nextJoke(){
     console.log("funnyList: ",funnyList)
     funnyList.append(h3)
     h3.innerHTML = haha.innerHTML
-    console.log("h3 again: ", h3)
-    console.log("attempting to write innerHTML")
-
-    //funnyList.innerHTML = "haha"
-    //document.querySelector("h3").append(haha)
     getJokes()
   }else {
     getJokes()
@@ -51,18 +44,16 @@ function currentJoke(jokeValue){
   const joke = document.querySelector("#temp")
   const h4 = document.createElement("h4")
   document.querySelector("h4").remove()
-  //joke.removeChild(h4)
   h4.innerHTML = jokeValue
   joke.append(h4)
   document.querySelector("#laughed").style.display = "block"
-  document.querySelector("#next-joke").style.display = "block"
-  
   //add a drop down list here to rate the joke
   //1-Lame, 2-"Eh", 3-Chuckled, 4-Laughed, 5-I'm Crying
+  document.querySelector("#next-joke").style.display = "block"
+  
 
   //add a check button next to, to submit
 }
-
 
 //On the HTML page, start with Button:
 //"Did you hear:"

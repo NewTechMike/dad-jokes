@@ -16,3 +16,13 @@ h1, h2 {
   justify-content: center;
   color:rgb(8, 152, 248)
 }
+
+#laughed {
+  text-align: center;
+  margin: auto;
+}
+
+#next-joke {
+  text-align: center;
+  margin: auto
+}
