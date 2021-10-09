@@ -32,7 +32,7 @@ function nextJoke(){
     console.log("h3: ", h3.innerHTML)
     const funnyList = document.querySelector("#funny-list")
     console.log("funnyList: ",funnyList)
-    funnyList.append(h3)
+    funnyList.prepend(h3)
     h3.innerHTML = haha.innerHTML
     getJokes()
   }else {
@@ -51,8 +51,6 @@ function currentJoke(jokeValue){
   //1-Lame, 2-"Eh", 3-Chuckled, 4-Laughed, 5-I'm Crying
   document.querySelector("#next-joke").style.display = "block"
   
-
-  //add a check button next to, to submit
 }
 
 //On the HTML page, start with Button:
